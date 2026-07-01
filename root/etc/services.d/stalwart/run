@@ -1,0 +1,15 @@
+#!/bin/sh
+# Stalwart Mail Server s6 service
+#
+# Runs as root to bind privileged mail ports (25/110/143/465/587/993/995);
+# FreeBSD has no cap_net_bind_service/setcap, so unlike the upstream Linux image
+# it cannot run unprivileged from the start. Config + rocksdb store live under
+# /config (seeded by cont-init on first run). The fallback admin password is
+# taken from the ADMIN_SECRET env var.
+
+export STALWART_PATH=/config
+
+# Signal readiness to CIT once the HTTP/admin endpoint answers.
+s6-ready-when fetch -qo /dev/null http://127.0.0.1:8080/healthz/live
+
+exec /usr/local/bin/stalwart --config /config/config.toml

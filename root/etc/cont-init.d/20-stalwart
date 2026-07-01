@@ -1,0 +1,22 @@
+#!/bin/sh
+# Seed Stalwart's config on first run. This version does not self-bootstrap a
+# store-defining config, so we copy the packaged one (rocksdb store at
+# ${STALWART_PATH}/data) and add a plain-HTTP listener on 8080 for the web admin
+# and /healthz endpoint (the packaged config only exposes HTTPS on 443).
+set -e
+
+CONF=/config/config.toml
+
+if [ ! -f "$CONF" ]; then
+    echo "[stalwart] seeding $CONF from packaged default"
+    cp /usr/local/etc/stalwart/config.toml "$CONF"
+    cat >> "$CONF" <<'EOF'
+
+[server.listener."http"]
+protocol = "http"
+bind = ["0.0.0.0:8080", "[::]:8080"]
+EOF
+fi
+
+mkdir -p /config/data
+chown -R stalwart:stalwart /config 2>/dev/null || true

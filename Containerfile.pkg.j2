@@ -1,0 +1,47 @@
+ARG BASE_VERSION=15.1-latest
+FROM ghcr.io/daemonless/base:${BASE_VERSION}
+
+ARG FREEBSD_ARCH=amd64
+ARG PKG_NAME="stalwart"
+{% if packages == pkgname %}ARG PACKAGES="${PKG_NAME}"
+{% else %}ARG PACKAGES="stalwart"
+{% endif %}
+# License: dual-licensed AGPL-3.0-only (open core) + Stalwart Enterprise License
+# (SELv1, mirror auto-accept). SPDX label reflects the open core.
+LABEL org.opencontainers.image.title="Stalwart" \
+      org.opencontainers.image.description="Stalwart Mail Server is an open-source mail server solution with JMAP, IMAP4, POP3, and SMTP support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable." \
+      org.opencontainers.image.source="https://github.com/daemonless/stalwart" \
+      org.opencontainers.image.url="https://stalw.art/" \
+      org.opencontainers.image.licenses="AGPL-3.0-only" \
+      org.opencontainers.image.vendor="daemonless" \
+      org.opencontainers.image.authors="daemonless" \
+      io.daemonless.category="Network" \
+      io.daemonless.port="8080" \
+      io.daemonless.arch="${FREEBSD_ARCH}" \
+      io.daemonless.pkg-source="pkg" \
+      io.daemonless.packages="${PACKAGES}" \
+      io.daemonless.pkg-name="${PKG_NAME}"
+
+# Config + data live under /config. The packaged config.toml stores its rocksdb
+# data at ${STALWART_PATH}/data, so STALWART_PATH=/config -> /config/data.
+ENV STALWART_PATH=/config
+
+# Install stalwart (pkg creates the stalwart user/group).
+RUN pkg update && \
+    pkg install -y ${PACKAGES} && \
+    mkdir -p /app /config && \
+    pkg query '%v' ${PKG_NAME} > /app/version && \
+    pkg clean -ay && \
+    rm -rf /var/cache/pkg/* /var/db/pkg/repos/*
+
+# Copy root filesystem
+COPY root/ /
+
+# Set permissions
+RUN chmod +x /etc/services.d/stalwart/run /healthz /etc/cont-init.d/20-stalwart
+
+# Mail + submission + IMAP/POP3 + ManageSieve + JMAP/HTTP(S)/admin
+EXPOSE 25 110 143 443 465 587 993 995 4190 8080
+
+# Config + rocksdb data store
+VOLUME /config

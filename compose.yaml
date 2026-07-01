@@ -1,0 +1,115 @@
+name: stalwart
+
+x-daemonless:
+  title: "Stalwart"
+  icon: ":material-email-fast:"  # https://pictogrammers.com/library/mdi/ (material-) or https://simpleicons.org/ (simple-)
+  category: "Network"
+  description: "Stalwart Mail Server is an open-source mail server solution with JMAP, IMAP4, POP3, and SMTP support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable."
+  upstream_url: "https://stalw.art/"
+  web_url: "https://stalw.art/"
+  freshports_url: "https://www.freshports.org/mail/stalwart/"
+  user: "stalwart"
+  mlock: false
+  community: "Discord:https://discord.gg/Kb9tkhecZT"
+  appjail: true
+
+  notes: |
+    ### Using PostgreSQL or SQLite instead of RocksDB
+
+    By default `config.toml` stores everything (data, full-text search, blobs,
+    and lookups) in RocksDB under `/config/data`. To swap in an external
+    PostgreSQL database instead, replace the `[store."rocksdb"]` section and
+    point `[storage]` at the new store:
+
+    ```ini
+    [storage]
+    data = "postgresql"
+    fts = "postgresql"
+    blob = "postgresql"
+    lookup = "postgresql"
+    directory = "internal"
+
+    [store."postgresql"]
+    type = "postgresql"
+    host = "postgres-host"
+    port = 5432
+    database = "stalwart"
+    user = "stalwart"
+    password = "changeme"
+    pool.max-connections = 10
+
+    [directory."internal"]
+    type = "internal"
+    store = "postgresql"
+    ```
+
+    For SQLite (a single-file database, good for small single-node setups):
+
+    ```ini
+    [storage]
+    data = "sqlite"
+    fts = "sqlite"
+    blob = "sqlite"
+    lookup = "sqlite"
+    directory = "internal"
+
+    [store."sqlite"]
+    type = "sqlite"
+    path = "/config/stalwart.db"
+    pool.max-connections = 10
+
+    [directory."internal"]
+    type = "internal"
+    store = "sqlite"
+    ```
+
+    Edit `/config/config.toml` after the first run seeds it, then restart the
+    container. Blob storage can also be split onto a separate store (e.g. keep
+    `blob = "rocksdb"` while `data`/`fts`/`lookup` move to PostgreSQL) — see
+    [stalw.art/docs/storage](https://stalw.art/docs/storage/) for the full
+    per-store breakdown.
+
+  docs:
+    env:
+      TZ: "Timezone for the container"
+      ADMIN_SECRET: "Password for the fallback 'admin' web-admin account"
+    volumes:
+      /config: "Config (config.toml) + rocksdb data store"
+    ports:
+      25: "SMTP"
+      465: "SMTP submission (implicit TLS)"
+      587: "SMTP submission (STARTTLS)"
+      143: "IMAP4"
+      993: "IMAP4 (implicit TLS)"
+      110: "POP3"
+      995: "POP3 (implicit TLS)"
+      4190: "ManageSieve"
+      443: "HTTPS / JMAP / web admin"
+      8080: "HTTP / JMAP / web admin"
+
+services:
+  stalwart:
+    image: ghcr.io/daemonless/stalwart:latest
+    container_name: stalwart
+    restart: unless-stopped
+
+    environment:
+      - TZ=UTC
+      - ADMIN_SECRET=changeme
+
+    volumes:
+      - /path/to/containers/stalwart:/config
+
+    # First run: retrieve the temporary admin password from the logs, then open
+    # http://<host>:8080/admin to complete the setup wizard.
+    ports:
+      - "25:25"
+      - "465:465"
+      - "587:587"
+      - "143:143"
+      - "993:993"
+      - "110:110"
+      - "995:995"
+      - "4190:4190"
+      - "443:443"
+      - "8080:8080"

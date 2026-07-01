@@ -1,0 +1,23 @@
+# dbuild configuration file
+# Place in .daemonless/config.yaml or .dbuild.yaml (higher priority)
+#
+# Full reference: https://github.com/daemonless/dbuild
+
+build:
+  variants:
+    - tag: pkg
+      containerfile: Containerfile.pkg
+      default: true
+      aliases: ["latest"]
+    - tag: pkg-latest
+      containerfile: Containerfile.pkg
+      args:
+        BASE_VERSION: "15-latest"
+
+cit:
+  mode: health
+  port: 8080
+  health: /healthz/live
+  # Runs as root to bind privileged mail ports (25/110/143/465/587/993/995);
+  # FreeBSD has no cap_net_bind_service/setcap. /config is root-owned by design.
+  puid: false
