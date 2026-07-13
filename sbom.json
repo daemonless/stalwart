@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-01T22:03:57Z",
+  "generated": "2026-07-13T10:16:13Z",
   "image": "stalwart",
   "tags": {
     "pkg": {
       "app_version": "0.15.5_4",
       "arch": "amd64",
-      "generated": "2026-07-01T22:02:36Z",
+      "generated": "2026-07-13T10:13:56Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -27,7 +27,7 @@
           },
           {
             "name": "FreeBSD-clibs",
-            "version": "15.1"
+            "version": "15.1p1"
           },
           {
             "name": "FreeBSD-ctf-lib",
@@ -99,7 +99,7 @@
           },
           {
             "name": "FreeBSD-runtime",
-            "version": "15.1"
+            "version": "15.1p1"
           },
           {
             "name": "FreeBSD-tcpd",
@@ -111,7 +111,7 @@
           },
           {
             "name": "FreeBSD-utilities",
-            "version": "15.1"
+            "version": "15.1p1"
           },
           {
             "name": "FreeBSD-xz-lib",
@@ -119,7 +119,7 @@
           },
           {
             "name": "FreeBSD-zfs-lib",
-            "version": "15.1"
+            "version": "15.1p1"
           },
           {
             "name": "FreeBSD-zlib",
@@ -147,7 +147,7 @@
           },
           {
             "name": "jq",
-            "version": "1.8.1"
+            "version": "1.8.2"
           },
           {
             "name": "liblz4",
@@ -163,7 +163,7 @@
           },
           {
             "name": "rocksdb",
-            "version": "11.1.1_1"
+            "version": "11.1.2"
           },
           {
             "name": "s6",
@@ -211,7 +211,7 @@
     "pkg-latest": {
       "app_version": "0.15.5_4",
       "arch": "amd64",
-      "generated": "2026-07-01T22:02:47Z",
+      "generated": "2026-07-13T10:15:03Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -233,7 +233,7 @@
           },
           {
             "name": "FreeBSD-clibs",
-            "version": "15.0"
+            "version": "15.0p11"
           },
           {
             "name": "FreeBSD-ctf-lib",
@@ -301,7 +301,7 @@
           },
           {
             "name": "FreeBSD-runtime",
-            "version": "15.0p10"
+            "version": "15.0p11"
           },
           {
             "name": "FreeBSD-tcpd",
@@ -313,7 +313,7 @@
           },
           {
             "name": "FreeBSD-utilities",
-            "version": "15.0p10"
+            "version": "15.0p11"
           },
           {
             "name": "FreeBSD-xz-lib",
@@ -321,7 +321,7 @@
           },
           {
             "name": "FreeBSD-zfs-lib",
-            "version": "15.0p10"
+            "version": "15.0p11"
           },
           {
             "name": "FreeBSD-zlib",
@@ -345,7 +345,7 @@
           },
           {
             "name": "jq",
-            "version": "1.8.1"
+            "version": "1.8.2"
           },
           {
             "name": "liblz4",
@@ -361,7 +361,7 @@
           },
           {
             "name": "rocksdb",
-            "version": "11.1.1_1"
+            "version": "11.1.2"
           },
           {
             "name": "s6",
