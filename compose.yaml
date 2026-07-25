@@ -14,6 +14,11 @@ x-daemonless:
   appjail: true
 
   notes: |
+    ### IPv4 / Dual-Stack & Internal Proxy Notes
+
+    * **Internal IPv4 Proxy (`ENABLE_V4PROXY`):** Stalwart `v0.16.x` bootstrap mode binds to `[::]:8080` (IPv6). On FreeBSD (where `net.inet6.ip6.v6only=1` by default), accessing `http://127.0.0.1:8080` via IPv4 is refused. The container includes an internal `socat` helper (`stalwart-v4proxy`) enabled by default (`ENABLE_V4PROXY=true`) that bridges IPv4 port 8080 to IPv6 `[::1]:8080`. You can disable the internal proxy by setting `ENABLE_V4PROXY=false`, or enable IPv4-mapping host-wide on FreeBSD by setting `sysctl net.inet6.ip6.v6only=0`.
+    * **External IPv4 Reverse Proxy / PROXY Protocol:** If placing Stalwart behind an external IPv4 reverse proxy (Nginx, Traefik, HAProxy) or using PROXY protocol headers, add your proxy's IPv4 address/subnet (e.g. `127.0.0.1/32`) to `proxyTrustedNetworks` under **Settings → Network → Services** in Stalwart to prevent header parsing failures and proxy auto-bans.
+
     ### Using PostgreSQL or SQLite instead of RocksDB
 
     By default `config.toml` stores everything (data, full-text search, blobs,
@@ -73,6 +78,12 @@ x-daemonless:
     env:
       TZ: "Timezone for the container"
       ADMIN_SECRET: "Password for the fallback 'admin' web-admin account"
+      ENABLE_V4PROXY:
+        desc: "Enable internal socat IPv4->IPv6 proxy on port 8080 for initial setup UI and healthchecks on FreeBSD (default true). Set false to disable."
+        default: "true"
+      SKIP_CHOWN:
+        desc: "Skip the startup recursive chown of /config once ownership is recorded in /config/.chown_done (default true). Set false to force a chown on every start. The marker lives in /config, so /config must be a persistent volume for the skip to take effect across restarts."
+        default: "true"
     volumes:
       /config: "Config (config.toml) + rocksdb data store"
     ports:
@@ -96,6 +107,7 @@ services:
     environment:
       - TZ=UTC
       - ADMIN_SECRET=changeme
+      - ENABLE_V4PROXY=true
 
     volumes:
       - /path/to/containers/stalwart:/config

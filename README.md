@@ -20,7 +20,8 @@ Stalwart Mail Server is an open-source mail server solution with JMAP, IMAP4, PO
 ## Version Tags
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
-| `latest` / `pkg` | **FreeBSD Quarterly**. Uses stable, tested packages. | Most users. Matches Linux Docker behavior. |
+| `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
+| `pkg` | **FreeBSD Quarterly**. Uses stable, tested packages. | Production stability. |
 | `pkg-latest` | **FreeBSD Latest**. Rolling package updates. | Newest FreeBSD packages. |
 
 ## Prerequisites
@@ -38,6 +39,8 @@ services:
     environment:
       - TZ=UTC  # Timezone for the container
       - ADMIN_SECRET=changeme  # Password for the fallback 'admin' web-admin account
+      - ENABLE_V4PROXY=true  # Enable internal socat IPv4->IPv6 proxy on port 8080 for initial setup UI and healthchecks on FreeBSD (default true). Set false to disable.
+      - SKIP_CHOWN=true  # Skip the startup recursive chown of /config once ownership is recorded in /config/.chown_done (default true). Set false to force a chown on every start. The marker lives in /config, so /config must be a persistent volume for the skip to take effect across restarts.
     volumes:
       - "/path/to/containers/stalwart:/config"
     ports:
@@ -63,6 +66,8 @@ services:
 DIRECTOR_PROJECT=stalwart
 TZ=UTC
 ADMIN_SECRET=changeme
+ENABLE_V4PROXY=true
+SKIP_CHOWN=true
 ```
 
 **appjail-director.yml**:
@@ -93,6 +98,8 @@ services:
       environment:
         - TZ: !ENV '${TZ}'
         - ADMIN_SECRET: !ENV '${ADMIN_SECRET}'
+        - ENABLE_V4PROXY: !ENV '${ENABLE_V4PROXY}'
+        - SKIP_CHOWN: !ENV '${SKIP_CHOWN}'
     volumes:
       - stalwart: /config
 volumes:
@@ -128,6 +135,8 @@ podman run -d --name stalwart \
   -p 8080:8080 \
   -e TZ=UTC \
   -e ADMIN_SECRET=changeme \
+  -e ENABLE_V4PROXY=true \
+  -e SKIP_CHOWN=true \
   -v /path/to/containers/stalwart:/config \
   ghcr.io/daemonless/stalwart:latest
 ```
@@ -152,6 +161,8 @@ appjail oci run -Pd \
   -o expose="8080:8080 proto:tcp" \
   -e TZ=UTC \
   -e ADMIN_SECRET=changeme \
+  -e ENABLE_V4PROXY=true \
+  -e SKIP_CHOWN=true \
   -o fstab="/path/to/containers/stalwart /config <pseudofs>" \
   ghcr.io/daemonless/stalwart:latest stalwart
 ```
@@ -169,6 +180,8 @@ appjail oci run -Pd \
     env:
       TZ: "UTC"
       ADMIN_SECRET: "changeme"
+      ENABLE_V4PROXY: "true"
+      SKIP_CHOWN: "true"
     ports:
       - "25:25"
       - "465:465"
@@ -194,6 +207,8 @@ Access at: `http://localhost:25`
 |----------|---------|-------------|
 | `TZ` | `UTC` | Timezone for the container |
 | `ADMIN_SECRET` | `changeme` | Password for the fallback 'admin' web-admin account |
+| `ENABLE_V4PROXY` | `true` | Enable internal socat IPv4->IPv6 proxy on port 8080 for initial setup UI and healthchecks on FreeBSD (default true). Set false to disable. |
+| `SKIP_CHOWN` | `true` | Skip the startup recursive chown of /config once ownership is recorded in /config/.chown_done (default true). Set false to force a chown on every start. The marker lives in /config, so /config must be a persistent volume for the skip to take effect across restarts. |
 
 ### Volumes
 
@@ -215,6 +230,11 @@ Access at: `http://localhost:25`
 | `4190` | TCP | ManageSieve |
 | `443` | TCP | HTTPS / JMAP / web admin |
 | `8080` | TCP | HTTP / JMAP / web admin |
+
+### IPv4 / Dual-Stack & Internal Proxy Notes
+
+* **Internal IPv4 Proxy (`ENABLE_V4PROXY`):** Stalwart `v0.16.x` bootstrap mode binds to `[::]:8080` (IPv6). On FreeBSD (where `net.inet6.ip6.v6only=1` by default), accessing `http://127.0.0.1:8080` via IPv4 is refused. The container includes an internal `socat` helper (`stalwart-v4proxy`) enabled by default (`ENABLE_V4PROXY=true`) that bridges IPv4 port 8080 to IPv6 `[::1]:8080`. You can disable the internal proxy by setting `ENABLE_V4PROXY=false`, or enable IPv4-mapping host-wide on FreeBSD by setting `sysctl net.inet6.ip6.v6only=0`.
+* **External IPv4 Reverse Proxy / PROXY Protocol:** If placing Stalwart behind an external IPv4 reverse proxy (Nginx, Traefik, HAProxy) or using PROXY protocol headers, add your proxy's IPv4 address/subnet (e.g. `127.0.0.1/32`) to `proxyTrustedNetworks` under **Settings → Network → Services** in Stalwart to prevent header parsing failures and proxy auto-bans.
 
 ### Using PostgreSQL or SQLite instead of RocksDB
 

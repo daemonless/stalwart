@@ -5,10 +5,11 @@
 
 build:
   variants:
+    - tag: latest
+      containerfile: Containerfile
+      default: true
     - tag: pkg
       containerfile: Containerfile.pkg
-      default: true
-      aliases: ["latest"]
     - tag: pkg-latest
       containerfile: Containerfile.pkg
       args:

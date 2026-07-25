@@ -38,7 +38,7 @@ RUN pkg update && \
 COPY root/ /
 
 # Set permissions
-RUN chmod +x /etc/services.d/stalwart/run /healthz /etc/cont-init.d/20-stalwart
+RUN chmod +x /etc/services.d/stalwart/run /etc/services.d/stalwart-v4proxy/run /healthz /etc/cont-init.d/20-stalwart
 
 # Mail + submission + IMAP/POP3 + ManageSieve + JMAP/HTTP(S)/admin
 EXPOSE 25 110 143 443 465 587 993 995 4190 8080

@@ -1,13 +1,12 @@
 #!/bin/sh
-# Seed Stalwart's config on first run. This version does not self-bootstrap a
-# store-defining config, so we copy the packaged one (rocksdb store at
-# ${STALWART_PATH}/data) and add a plain-HTTP listener on 8080 for the web admin
-# and /healthz endpoint (the packaged config only exposes HTTPS on 443).
+# pkg variant seeds the packaged config.toml (+ IPv4/IPv6 http listener). The
+# 0.16 binary variant has no file-based listeners, so it ships nothing and boots
+# into bootstrap mode (mirrors the FreeBSD mail/stalwart 0.16 port).
 set -e
 
 CONF=/config/config.toml
 
-if [ ! -f "$CONF" ]; then
+if [ ! -f "$CONF" ] && [ -f /usr/local/etc/stalwart/config.toml ]; then
     echo "[stalwart] seeding $CONF from packaged default"
     cp /usr/local/etc/stalwart/config.toml "$CONF"
     cat >> "$CONF" <<'EOF'
@@ -19,4 +18,14 @@ EOF
 fi
 
 mkdir -p /config/data
-chown -R stalwart:stalwart /config 2>/dev/null || true
+
+# Re-chown only on first run / ownership change (marker in /config); SKIP_CHOWN=false
+# forces it. No-op on the binary variant (no stalwart user).
+SKIP_CHOWN=${SKIP_CHOWN:-true}
+WANT="stalwart:stalwart"
+if [ "${SKIP_CHOWN}" = "true" ] && [ "$(cat /config/.chown_done 2>/dev/null)" = "$WANT" ]; then
+    :
+else
+    echo "$WANT" > /config/.chown_done
+    chown -R stalwart:stalwart /config 2>/dev/null || true
+fi
