@@ -9,7 +9,7 @@ FROM ghcr.io/daemonless/base:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
 ARG PKG_NAME="stalwart"
-ARG PACKAGES="${PKG_NAME}"
+ARG PACKAGES="${PKG_NAME} socat"
 
 # License: dual-licensed AGPL-3.0-only (open core) + Stalwart Enterprise License
 # (SELv1, mirror auto-accept). SPDX label reflects the open core.

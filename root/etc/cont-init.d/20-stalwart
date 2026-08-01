@@ -17,7 +17,8 @@ bind = ["0.0.0.0:8080", "[::]:8080"]
 EOF
 fi
 
-mkdir -p /config/data
+mkdir -p /config/data /config/logs
+chown -R bsd:bsd /config/logs 2>/dev/null || true
 
 # Re-chown only on first run / ownership change (marker in /config); SKIP_CHOWN=false
 # forces it. No-op on the binary variant (no stalwart user).
@@ -28,4 +29,5 @@ if [ "${SKIP_CHOWN}" = "true" ] && [ "$(cat /config/.chown_done 2>/dev/null)" = 
 else
     echo "$WANT" > /config/.chown_done
     chown -R stalwart:stalwart /config 2>/dev/null || true
+    chown -R bsd:bsd /config/logs 2>/dev/null || true
 fi

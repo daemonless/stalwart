@@ -3,8 +3,8 @@ FROM ghcr.io/daemonless/base:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
 ARG PKG_NAME="stalwart"
-{% if packages == pkgname %}ARG PACKAGES="${PKG_NAME}"
-{% else %}ARG PACKAGES="stalwart"
+{% if packages == pkgname %}ARG PACKAGES="${PKG_NAME} socat"
+{% else %}ARG PACKAGES="stalwart socat"
 {% endif %}
 # License: dual-licensed AGPL-3.0-only (open core) + Stalwart Enterprise License
 # (SELv1, mirror auto-accept). SPDX label reflects the open core.
