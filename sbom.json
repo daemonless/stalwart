@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-02T20:25:32Z",
+  "generated": "2026-08-10T10:52:28Z",
   "image": "stalwart",
   "tags": {
     "latest": {
       "app_version": "v0.16.16",
       "arch": "amd64",
-      "generated": "2026-08-02T20:21:32Z",
+      "generated": "2026-08-10T10:49:29Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -256,10 +256,46 @@
           },
           {
             "licenses": [
+              "BSD3CLAUSE"
+            ],
+            "name": "googletest",
+            "version": "1.16.0"
+          },
+          {
+            "licenses": [
+              "MIT",
+              "GPLv2+"
+            ],
+            "name": "hwdata",
+            "version": "0.410,1"
+          },
+          {
+            "licenses": [
+              "BSD3CLAUSE"
+            ],
+            "name": "hwloc2",
+            "version": "2.12.1_1"
+          },
+          {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
+            "name": "indexinfo",
+            "version": "0.3.1_1"
+          },
+          {
+            "licenses": [
               "MIT"
             ],
             "name": "jq",
             "version": "1.8.2"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
+            "name": "level-zero",
+            "version": "1.31.0"
           },
           {
             "licenses": [
@@ -268,6 +304,27 @@
             ],
             "name": "liblz4",
             "version": "1.10.0_2,1"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
+            "name": "libpciaccess",
+            "version": "0.19"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
+            "name": "libxml2",
+            "version": "2.15.3"
+          },
+          {
+            "licenses": [
+              "APACHE20"
+            ],
+            "name": "onetbb",
+            "version": "2023.0.0"
           },
           {
             "licenses": [
@@ -285,11 +342,18 @@
           },
           {
             "licenses": [
+              "GPLv3"
+            ],
+            "name": "readline",
+            "version": "8.3.3"
+          },
+          {
+            "licenses": [
               "GPLv2",
               "APACHE20"
             ],
             "name": "rocksdb",
-            "version": "11.1.2"
+            "version": "11.1.2_1"
           },
           {
             "licenses": [
@@ -330,7 +394,13 @@
         ],
         "go": [],
         "java": [],
-        "node": [],
+        "node": [
+          {
+            "name": "js",
+            "purl": "",
+            "version": "1.0.0"
+          }
+        ],
         "php": [],
         "python": [],
         "ruby": [],
@@ -339,21 +409,21 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 45,
+        "freebsd": 54,
         "go": 0,
         "java": 0,
-        "node": 0,
+        "node": 1,
         "php": 0,
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 45
+        "total": 55
       }
     },
     "pkg": {
       "app_version": "0.16.15",
       "arch": "amd64",
-      "generated": "2026-08-02T20:21:23Z",
+      "generated": "2026-08-10T10:50:10Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -604,10 +674,46 @@
           },
           {
             "licenses": [
+              "BSD3CLAUSE"
+            ],
+            "name": "googletest",
+            "version": "1.16.0"
+          },
+          {
+            "licenses": [
+              "MIT",
+              "GPLv2+"
+            ],
+            "name": "hwdata",
+            "version": "0.410,1"
+          },
+          {
+            "licenses": [
+              "BSD3CLAUSE"
+            ],
+            "name": "hwloc2",
+            "version": "2.12.1_1"
+          },
+          {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
+            "name": "indexinfo",
+            "version": "0.3.1_1"
+          },
+          {
+            "licenses": [
               "MIT"
             ],
             "name": "jq",
             "version": "1.8.2"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
+            "name": "level-zero",
+            "version": "1.31.0"
           },
           {
             "licenses": [
@@ -616,6 +722,27 @@
             ],
             "name": "liblz4",
             "version": "1.10.0_2,1"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
+            "name": "libpciaccess",
+            "version": "0.19"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
+            "name": "libxml2",
+            "version": "2.15.3"
+          },
+          {
+            "licenses": [
+              "APACHE20"
+            ],
+            "name": "onetbb",
+            "version": "2023.0.0"
           },
           {
             "licenses": [
@@ -633,11 +760,18 @@
           },
           {
             "licenses": [
+              "GPLv3"
+            ],
+            "name": "readline",
+            "version": "8.3.3"
+          },
+          {
+            "licenses": [
               "GPLv2",
               "APACHE20"
             ],
             "name": "rocksdb",
-            "version": "11.1.2"
+            "version": "11.1.2_1"
           },
           {
             "licenses": [
@@ -686,7 +820,13 @@
         ],
         "go": [],
         "java": [],
-        "node": [],
+        "node": [
+          {
+            "name": "js",
+            "purl": "",
+            "version": "1.0.0"
+          }
+        ],
         "php": [],
         "python": [],
         "ruby": [],
@@ -695,21 +835,21 @@
       "source": "pkg",
       "summary": {
         "dotnet": 0,
-        "freebsd": 46,
+        "freebsd": 55,
         "go": 0,
         "java": 0,
-        "node": 0,
+        "node": 1,
         "php": 0,
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 46
+        "total": 56
       }
     },
     "pkg-latest": {
       "app_version": "0.16.15",
       "arch": "amd64",
-      "generated": "2026-08-02T20:23:36Z",
+      "generated": "2026-08-10T10:50:24Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -960,10 +1100,46 @@
           },
           {
             "licenses": [
+              "BSD3CLAUSE"
+            ],
+            "name": "googletest",
+            "version": "1.16.0"
+          },
+          {
+            "licenses": [
+              "MIT",
+              "GPLv2+"
+            ],
+            "name": "hwdata",
+            "version": "0.410,1"
+          },
+          {
+            "licenses": [
+              "BSD3CLAUSE"
+            ],
+            "name": "hwloc2",
+            "version": "2.12.1_1"
+          },
+          {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
+            "name": "indexinfo",
+            "version": "0.3.1_1"
+          },
+          {
+            "licenses": [
               "MIT"
             ],
             "name": "jq",
             "version": "1.8.2"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
+            "name": "level-zero",
+            "version": "1.31.0"
           },
           {
             "licenses": [
@@ -972,6 +1148,27 @@
             ],
             "name": "liblz4",
             "version": "1.10.0_2,1"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
+            "name": "libpciaccess",
+            "version": "0.19"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
+            "name": "libxml2",
+            "version": "2.15.3"
+          },
+          {
+            "licenses": [
+              "APACHE20"
+            ],
+            "name": "onetbb",
+            "version": "2023.0.0"
           },
           {
             "licenses": [
@@ -989,11 +1186,18 @@
           },
           {
             "licenses": [
+              "GPLv3"
+            ],
+            "name": "readline",
+            "version": "8.3.3"
+          },
+          {
+            "licenses": [
               "GPLv2",
               "APACHE20"
             ],
             "name": "rocksdb",
-            "version": "11.1.2"
+            "version": "11.1.2_1"
           },
           {
             "licenses": [
@@ -1042,7 +1246,13 @@
         ],
         "go": [],
         "java": [],
-        "node": [],
+        "node": [
+          {
+            "name": "js",
+            "purl": "",
+            "version": "1.0.0"
+          }
+        ],
         "php": [],
         "python": [],
         "ruby": [],
@@ -1051,15 +1261,15 @@
       "source": "pkg",
       "summary": {
         "dotnet": 0,
-        "freebsd": 46,
+        "freebsd": 55,
         "go": 0,
         "java": 0,
-        "node": 0,
+        "node": 1,
         "php": 0,
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 46
+        "total": 56
       }
     }
   }

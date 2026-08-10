@@ -20,9 +20,9 @@ Stalwart Mail Server is an open-source mail server solution with JMAP, IMAP4, PO
 ## Version Tags
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
-| `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
+| `latest` | **Upstream Binary**. Built from official release. | Most users — recommended. |
 | `pkg` | **FreeBSD Quarterly**. Uses stable, tested packages. | Production stability. |
-| `pkg-latest` | **FreeBSD Latest**. Rolling package updates. | Newest FreeBSD packages. |
+| `pkg-latest` | **FreeBSD Latest**. Rolling package updates. | Staying current. |
 
 ## Prerequisites
 Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
@@ -83,16 +83,16 @@ services:
     name: stalwart
     options:
       - container: 'boot args:--pull'
-      - expose: '25:25 proto:tcp' \
-      - expose: '465:465 proto:tcp' \
-      - expose: '587:587 proto:tcp' \
-      - expose: '143:143 proto:tcp' \
-      - expose: '993:993 proto:tcp' \
-      - expose: '110:110 proto:tcp' \
-      - expose: '995:995 proto:tcp' \
-      - expose: '4190:4190 proto:tcp' \
-      - expose: '443:443 proto:tcp' \
-      - expose: '8080:8080 proto:tcp' \
+      - expose: '25:25 proto:tcp'
+      - expose: '465:465 proto:tcp'
+      - expose: '587:587 proto:tcp'
+      - expose: '143:143 proto:tcp'
+      - expose: '993:993 proto:tcp'
+      - expose: '110:110 proto:tcp'
+      - expose: '995:995 proto:tcp'
+      - expose: '4190:4190 proto:tcp'
+      - expose: '443:443 proto:tcp'
+      - expose: '8080:8080 proto:tcp'
     oci:
       user: root
       environment:
