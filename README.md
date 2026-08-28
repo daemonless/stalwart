@@ -54,8 +54,11 @@ services:
       - "4190:4190"
       - "443:443"
       - "8080:8080"
-    restart: unless-stopped
+    # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
+    restart: always
 ```
+
+Save as `compose.yaml`, then run `podman-compose up -d`.
 
 ### AppJail Director
 **.env**:
@@ -117,6 +120,9 @@ ARG tag=latest
 OPTION overwrite=force
 OPTION from=ghcr.io/daemonless/stalwart:${tag}
 ```
+
+Save the files above, then run `appjail-director up`.
+
 **Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
 
 ### Podman CLI
@@ -140,6 +146,8 @@ podman run -d --name stalwart \
   -v /path/to/containers/stalwart:/config \
   ghcr.io/daemonless/stalwart:latest
 ```
+
+Save as `run.sh`, then run `sh run.sh`.
 
 ### AppJail
 
@@ -166,7 +174,40 @@ appjail oci run -Pd \
   -o fstab="/path/to/containers/stalwart /config <pseudofs>" \
   ghcr.io/daemonless/stalwart:latest stalwart
 ```
+
+Save as `run.sh`, then run `sh run.sh`.
+
 **Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
+
+### Bastille
+
+> [!WARNING]
+> Bastille's OCI support is **experimental**. It requires `buildah`, shares the host network stack (`inherit`), and persists image-declared volumes under `--data-path`.
+
+```yaml
+services:
+  stalwart:
+    image: "ghcr.io/daemonless/stalwart:latest"
+    container_name: stalwart
+    network_mode: host  # jail shares host networking
+    environment:
+      - TZ=UTC
+      - ADMIN_SECRET=changeme
+      - ENABLE_V4PROXY=true
+      - SKIP_CHOWN=true
+```
+
+Save as `podman-compose.yml`, then run `bastille up`. Or via CLI:
+
+```bash
+bastille create -O \
+  --env TZ=UTC \
+  --env ADMIN_SECRET=changeme \
+  --env ENABLE_V4PROXY=true \
+  --env SKIP_CHOWN=true \
+  --data-path /path/to/containers/stalwart \
+  stalwart ghcr.io/daemonless/stalwart:latest inherit
+```
 
 ### Ansible
 
@@ -196,6 +237,8 @@ appjail oci run -Pd \
     volumes:
       - "/path/to/containers/stalwart:/config"
 ```
+
+Save as `stalwart-deploy.yaml`, then run `ansible-playbook stalwart-deploy.yaml`.
 
 Access at: `http://localhost:25`
 
