@@ -4,6 +4,7 @@
 
 # Skip for pkg variant (which dual-binds 0.0.0.0 via config.toml) or if ENABLE_V4PROXY=false
 if [ -f /usr/local/etc/stalwart/config.toml ] || [ "${ENABLE_V4PROXY:-true}" = "false" ] || [ "${ENABLE_V4PROXY:-true}" = "0" ]; then
+    s6-svc -d .
     exit 0
 fi
 
