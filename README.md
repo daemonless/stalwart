@@ -349,7 +349,7 @@ container. Blob storage can also be split onto a separate store (e.g. keep
 per-store breakdown.
 
 
-**Architectures:** amd64
+**Architectures:** amd64, aarch64
 **User:** `stalwart` (UID/GID via PUID/PGID, defaults to 1000:1000)
 **Base:** FreeBSD 15.1
 

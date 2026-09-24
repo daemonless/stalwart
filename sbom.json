@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-21T13:46:29Z",
+  "generated": "2026-09-24T23:41:34Z",
   "image": "stalwart",
   "tags": {
-    "latest": {
+    "latest-amd64": {
       "app_version": "v0.16.23",
       "arch": "amd64",
-      "generated": "2026-09-21T13:45:35Z",
+      "generated": "2026-09-24T23:39:18Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -359,7 +359,7 @@
               "GPLv3"
             ],
             "name": "readline",
-            "version": "8.3.3"
+            "version": "8.3.6"
           },
           {
             "licenses": [
@@ -434,10 +434,10 @@
         "total": 57
       }
     },
-    "pkg": {
+    "pkg-amd64": {
       "app_version": "0.16.21_1",
       "arch": "amd64",
-      "generated": "2026-09-21T13:45:19Z",
+      "generated": "2026-09-24T23:40:31Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -791,7 +791,7 @@
               "GPLv3"
             ],
             "name": "readline",
-            "version": "8.3.3"
+            "version": "8.3.6"
           },
           {
             "licenses": [
@@ -874,10 +874,10 @@
         "total": 58
       }
     },
-    "pkg-latest": {
+    "pkg-latest-amd64": {
       "app_version": "0.16.21_1",
       "arch": "amd64",
-      "generated": "2026-09-21T13:45:21Z",
+      "generated": "2026-09-24T23:39:52Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1231,7 +1231,7 @@
               "GPLv3"
             ],
             "name": "readline",
-            "version": "8.3.3"
+            "version": "8.3.6"
           },
           {
             "licenses": [
