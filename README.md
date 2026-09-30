@@ -43,7 +43,7 @@ services:
       - ENABLE_V4PROXY=true  # Enable internal socat IPv4->IPv6 proxy on port 8080 for initial setup UI and healthchecks on FreeBSD (default true). Set false to disable.
       - SKIP_CHOWN=true  # Skip the startup recursive chown of /config once ownership is recorded in /config/.chown_done (default true). Set false to force a chown on every start. The marker lives in /config, so /config must be a persistent volume for the skip to take effect across restarts.
     volumes:
-      - "/path/to/containers/stalwart:/config"
+      - "/containers/stalwart:/config"
     ports:
       - "25:25"
       - "465:465"
@@ -108,7 +108,7 @@ services:
       - stalwart: /config
 volumes:
   stalwart:
-    device: '/path/to/containers/stalwart'
+    device: '/containers/stalwart'
 ```
 
 **Makejail**:
@@ -149,7 +149,7 @@ podman run -d --name stalwart \
   -e ADMIN_SECRET=changeme \
   -e ENABLE_V4PROXY=true \
   -e SKIP_CHOWN=true \
-  -v /path/to/containers/stalwart:/config \
+  -v /containers/stalwart:/config \
   ghcr.io/daemonless/stalwart:latest
 ```
 
@@ -178,7 +178,7 @@ appjail oci run -Pd \
   -e ADMIN_SECRET=changeme \
   -e ENABLE_V4PROXY=true \
   -e SKIP_CHOWN=true \
-  -o fstab="/path/to/containers/stalwart /config <pseudofs>" \
+  -o fstab="/containers/stalwart /config <pseudofs>" \
   ghcr.io/daemonless/stalwart:latest stalwart
 ```
 
@@ -208,7 +208,7 @@ services:
       - ENABLE_V4PROXY=true
       - SKIP_CHOWN=true
     volumes:
-      - "/path/to/containers/stalwart:/config"
+      - "/containers/stalwart:/config"
 ```
 
 Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
@@ -219,7 +219,7 @@ bastille create -O \
   --env ADMIN_SECRET=changeme \
   --env ENABLE_V4PROXY=true \
   --env SKIP_CHOWN=true \
-  --volume /path/to/containers/stalwart /config \
+  --volume /containers/stalwart /config \
   stalwart ghcr.io/daemonless/stalwart:latest inherit
 ```
 
@@ -249,7 +249,7 @@ bastille create -O \
       - "443:443"
       - "8080:8080"
     volumes:
-      - "/path/to/containers/stalwart:/config"
+      - "/containers/stalwart:/config"
 ```
 
 Save as `stalwart-deploy.yaml`, then run `ansible-playbook stalwart-deploy.yaml`.
