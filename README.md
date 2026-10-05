@@ -131,65 +131,6 @@ Save the files above, then run `appjail-director up`.
 >
 > To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
 
-### Podman CLI
-
-```bash
-podman run -d --name stalwart \
-  -p 25:25 \
-  -p 465:465 \
-  -p 587:587 \
-  -p 143:143 \
-  -p 993:993 \
-  -p 110:110 \
-  -p 995:995 \
-  -p 4190:4190 \
-  -p 443:443 \
-  -p 8080:8080 \
-  -e TZ=UTC \
-  -e ADMIN_SECRET=changeme \
-  -e ENABLE_V4PROXY=true \
-  -e SKIP_CHOWN=true \
-  -v /containers/stalwart:/config \
-  ghcr.io/daemonless/stalwart:latest
-```
-
-Save as `run.sh`, then run `sh run.sh`.
-
-### AppJail
-
-
-```bash
-appjail oci run -Pd \
-  -o overwrite=force \
-  -o container="args:--pull" \
-  -o virtualnet=":<random> default" \
-  -o nat \
-  -o expose="25:25 proto:tcp" \
-  -o expose="465:465 proto:tcp" \
-  -o expose="587:587 proto:tcp" \
-  -o expose="143:143 proto:tcp" \
-  -o expose="993:993 proto:tcp" \
-  -o expose="110:110 proto:tcp" \
-  -o expose="995:995 proto:tcp" \
-  -o expose="4190:4190 proto:tcp" \
-  -o expose="443:443 proto:tcp" \
-  -o expose="8080:8080 proto:tcp" \
-  -e TZ=UTC \
-  -e ADMIN_SECRET=changeme \
-  -e ENABLE_V4PROXY=true \
-  -e SKIP_CHOWN=true \
-  -o fstab="/containers/stalwart /config <pseudofs>" \
-  ghcr.io/daemonless/stalwart:latest stalwart
-```
-
-Save the files above, then run `sh run.sh`.
-
-
-> [!WARNING]
-> Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the jail's IPv4 address or hostname assigned by the virtual network.
->
-> To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
-
 ### Bastille
 
 > [!WARNING]
@@ -211,48 +152,7 @@ services:
       - "/containers/stalwart:/config"
 ```
 
-Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
-
-```bash
-bastille create -O \
-  --env TZ=UTC \
-  --env ADMIN_SECRET=changeme \
-  --env ENABLE_V4PROXY=true \
-  --env SKIP_CHOWN=true \
-  --volume /containers/stalwart /config \
-  stalwart ghcr.io/daemonless/stalwart:latest inherit
-```
-
-### Ansible
-
-```yaml
-- name: Deploy stalwart
-  containers.podman.podman_container:
-    name: stalwart
-    image: "ghcr.io/daemonless/stalwart:latest"
-    state: started
-    restart_policy: always
-    env:
-      TZ: "UTC"
-      ADMIN_SECRET: "changeme"
-      ENABLE_V4PROXY: "true"
-      SKIP_CHOWN: "true"
-    ports:
-      - "25:25"
-      - "465:465"
-      - "587:587"
-      - "143:143"
-      - "993:993"
-      - "110:110"
-      - "995:995"
-      - "4190:4190"
-      - "443:443"
-      - "8080:8080"
-    volumes:
-      - "/containers/stalwart:/config"
-```
-
-Save as `stalwart-deploy.yaml`, then run `ansible-playbook stalwart-deploy.yaml`.
+Save as `bastille-compose.yml`, then run `bastille up`.
 
 Access at: `http://localhost:25`
 

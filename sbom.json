@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-30T07:04:04Z",
+  "generated": "2026-10-05T16:37:04Z",
   "image": "stalwart",
   "tags": {
     "latest-amd64": {
-      "app_version": "v0.16.24",
+      "app_version": "v0.16.25",
       "arch": "amd64",
-      "generated": "2026-09-30T07:02:30Z",
+      "generated": "2026-10-05T16:35:04Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -309,7 +309,7 @@
               "MIT"
             ],
             "name": "level-zero",
-            "version": "1.33.1"
+            "version": "1.34.0"
           },
           {
             "licenses": [
@@ -437,7 +437,7 @@
     "pkg-amd64": {
       "app_version": "0.16.23",
       "arch": "amd64",
-      "generated": "2026-09-30T07:02:50Z",
+      "generated": "2026-10-05T16:34:31Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -741,7 +741,7 @@
               "MIT"
             ],
             "name": "level-zero",
-            "version": "1.33.1"
+            "version": "1.34.0"
           },
           {
             "licenses": [
@@ -877,7 +877,7 @@
     "pkg-latest-amd64": {
       "app_version": "0.16.23",
       "arch": "amd64",
-      "generated": "2026-09-30T07:03:19Z",
+      "generated": "2026-10-05T16:36:20Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1181,7 +1181,7 @@
               "MIT"
             ],
             "name": "level-zero",
-            "version": "1.33.1"
+            "version": "1.34.0"
           },
           {
             "licenses": [
