@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-11T07:53:00Z",
+  "generated": "2026-10-11T22:57:20Z",
   "image": "stalwart",
   "tags": {
     "latest-amd64": {
-      "app_version": "v0.16.25",
+      "app_version": "v0.16.26",
       "arch": "amd64",
-      "generated": "2026-10-11T07:51:58Z",
+      "generated": "2026-10-11T22:51:06Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -437,7 +437,7 @@
     "pkg-amd64": {
       "app_version": "0.16.25",
       "arch": "amd64",
-      "generated": "2026-10-11T07:51:41Z",
+      "generated": "2026-10-11T22:50:33Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -684,7 +684,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.130"
+            "version": "3.131"
           },
           {
             "licenses": [
@@ -877,7 +877,7 @@
     "pkg-latest-amd64": {
       "app_version": "0.16.25",
       "arch": "amd64",
-      "generated": "2026-10-11T07:51:40Z",
+      "generated": "2026-10-11T22:52:02Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1124,7 +1124,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.130"
+            "version": "3.131"
           },
           {
             "licenses": [
