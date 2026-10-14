@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-11T22:57:20Z",
+  "generated": "2026-10-14T18:23:27Z",
   "image": "stalwart",
   "tags": {
     "latest-amd64": {
       "app_version": "v0.16.26",
       "arch": "amd64",
-      "generated": "2026-10-11T22:51:06Z",
+      "generated": "2026-10-14T18:13:59Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -281,7 +281,7 @@
               "GPLv2+"
             ],
             "name": "hwdata",
-            "version": "0.411,1"
+            "version": "0.412,1"
           },
           {
             "licenses": [
@@ -437,7 +437,7 @@
     "pkg-amd64": {
       "app_version": "0.16.25",
       "arch": "amd64",
-      "generated": "2026-10-11T22:50:33Z",
+      "generated": "2026-10-14T18:22:01Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -713,7 +713,7 @@
               "GPLv2+"
             ],
             "name": "hwdata",
-            "version": "0.411,1"
+            "version": "0.412,1"
           },
           {
             "licenses": [
@@ -877,7 +877,7 @@
     "pkg-latest-amd64": {
       "app_version": "0.16.25",
       "arch": "amd64",
-      "generated": "2026-10-11T22:52:02Z",
+      "generated": "2026-10-14T18:18:46Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1153,7 +1153,7 @@
               "GPLv2+"
             ],
             "name": "hwdata",
-            "version": "0.411,1"
+            "version": "0.412,1"
           },
           {
             "licenses": [
