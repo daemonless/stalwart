@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-12T00:34:17Z",
+  "generated": "2026-10-14T20:11:22Z",
   "image": "stalwart",
   "tags": {
     "latest-aarch64": {
       "app_version": "v0.16.26",
       "arch": "aarch64",
-      "generated": "2026-10-12T00:32:35Z",
+      "generated": "2026-10-14T20:09:16Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -252,7 +252,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.130"
+            "version": "3.131"
           },
           {
             "licenses": [
@@ -281,7 +281,7 @@
               "GPLv2+"
             ],
             "name": "hwdata",
-            "version": "0.411,1"
+            "version": "0.412,1"
           },
           {
             "licenses": [
@@ -435,9 +435,9 @@
       }
     },
     "pkg-aarch64": {
-      "app_version": "0.16.23",
+      "app_version": "0.16.25",
       "arch": "aarch64",
-      "generated": "2026-10-12T00:32:40Z",
+      "generated": "2026-10-14T20:09:20Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -713,7 +713,7 @@
               "GPLv2+"
             ],
             "name": "hwdata",
-            "version": "0.411,1"
+            "version": "0.412,1"
           },
           {
             "licenses": [
@@ -835,7 +835,7 @@
               "SELv2"
             ],
             "name": "stalwart",
-            "version": "0.16.23"
+            "version": "0.16.25"
           },
           {
             "licenses": [
@@ -875,9 +875,9 @@
       }
     },
     "pkg-latest-aarch64": {
-      "app_version": "0.16.23",
+      "app_version": "0.16.25",
       "arch": "aarch64",
-      "generated": "2026-10-12T00:32:45Z",
+      "generated": "2026-10-14T20:09:24Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1153,7 +1153,7 @@
               "GPLv2+"
             ],
             "name": "hwdata",
-            "version": "0.411,1"
+            "version": "0.412,1"
           },
           {
             "licenses": [
@@ -1275,7 +1275,7 @@
               "SELv2"
             ],
             "name": "stalwart",
-            "version": "0.16.23"
+            "version": "0.16.25"
           },
           {
             "licenses": [
