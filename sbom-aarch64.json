@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-18T21:31:55Z",
+  "generated": "2026-10-20T01:26:44Z",
   "image": "stalwart",
   "tags": {
     "latest-aarch64": {
       "app_version": "v0.16.27",
       "arch": "aarch64",
-      "generated": "2026-10-18T21:30:27Z",
+      "generated": "2026-10-20T01:24:49Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -435,9 +435,9 @@
       }
     },
     "pkg-aarch64": {
-      "app_version": "0.16.25",
+      "app_version": "0.16.25_1",
       "arch": "aarch64",
-      "generated": "2026-10-18T21:30:30Z",
+      "generated": "2026-10-20T01:24:52Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -835,7 +835,7 @@
               "SELv2"
             ],
             "name": "stalwart",
-            "version": "0.16.25"
+            "version": "0.16.25_1"
           },
           {
             "licenses": [
@@ -875,9 +875,9 @@
       }
     },
     "pkg-latest-aarch64": {
-      "app_version": "0.16.25",
+      "app_version": "0.16.25_1",
       "arch": "aarch64",
-      "generated": "2026-10-18T21:30:35Z",
+      "generated": "2026-10-20T01:24:56Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1275,7 +1275,7 @@
               "SELv2"
             ],
             "name": "stalwart",
-            "version": "0.16.25"
+            "version": "0.16.25_1"
           },
           {
             "licenses": [
