@@ -4,7 +4,4 @@
 
 export STALWART_PATH=/config
 
-# IPv4 works for both: pkg dual-binds 0.0.0.0; 0.16 gets it via the socat bridge.
-s6-ready-when fetch -qo /dev/null http://127.0.0.1:8080/healthz/live
-
 exec /usr/local/bin/stalwart --config "${STALWART_CONFIG:-/config/config.toml}"
