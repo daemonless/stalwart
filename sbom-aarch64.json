@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-20T01:26:44Z",
+  "generated": "2026-10-23T18:12:33Z",
   "image": "stalwart",
   "tags": {
     "latest-aarch64": {
       "app_version": "v0.16.27",
       "arch": "aarch64",
-      "generated": "2026-10-20T01:24:49Z",
+      "generated": "2026-10-23T18:10:42Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -174,13 +174,6 @@
             "licenses": [
               "BSD2CLAUSE"
             ],
-            "name": "FreeBSD-rc",
-            "version": "15.1"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE"
-            ],
             "name": "FreeBSD-resolvconf",
             "version": "15.1"
           },
@@ -189,7 +182,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -238,7 +231,7 @@
               "PD"
             ],
             "name": "FreeBSD-zoneinfo",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -253,13 +246,6 @@
             ],
             "name": "ca_root_nss",
             "version": "3.131"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
           },
           {
             "licenses": [
@@ -368,20 +354,6 @@
             ],
             "name": "rocksdb",
             "version": "11.1.2_1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
           },
           {
             "licenses": [
@@ -423,7 +395,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 56,
+        "freebsd": 52,
         "go": 0,
         "java": 0,
         "node": 1,
@@ -431,13 +403,13 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 57
+        "total": 53
       }
     },
     "pkg-aarch64": {
       "app_version": "0.16.25_1",
       "arch": "aarch64",
-      "generated": "2026-10-20T01:24:52Z",
+      "generated": "2026-10-23T18:10:47Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -606,13 +578,6 @@
             "licenses": [
               "BSD2CLAUSE"
             ],
-            "name": "FreeBSD-rc",
-            "version": "15.1"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE"
-            ],
             "name": "FreeBSD-resolvconf",
             "version": "15.1"
           },
@@ -621,7 +586,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -670,7 +635,7 @@
               "PD"
             ],
             "name": "FreeBSD-zoneinfo",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -684,14 +649,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.130"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
+            "version": "3.131"
           },
           {
             "licenses": [
@@ -803,20 +761,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
-          },
-          {
-            "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "snappy",
@@ -863,7 +807,7 @@
       "source": "pkg",
       "summary": {
         "dotnet": 0,
-        "freebsd": 57,
+        "freebsd": 53,
         "go": 0,
         "java": 0,
         "node": 1,
@@ -871,13 +815,13 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 58
+        "total": 54
       }
     },
     "pkg-latest-aarch64": {
       "app_version": "0.16.25_1",
       "arch": "aarch64",
-      "generated": "2026-10-20T01:24:56Z",
+      "generated": "2026-10-23T18:10:50Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1046,13 +990,6 @@
             "licenses": [
               "BSD2CLAUSE"
             ],
-            "name": "FreeBSD-rc",
-            "version": "15.1"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE"
-            ],
             "name": "FreeBSD-resolvconf",
             "version": "15.1"
           },
@@ -1061,7 +998,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -1110,7 +1047,7 @@
               "PD"
             ],
             "name": "FreeBSD-zoneinfo",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -1124,14 +1061,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.130"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
+            "version": "3.131"
           },
           {
             "licenses": [
@@ -1243,20 +1173,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
-          },
-          {
-            "licenses": [
               "BSD3CLAUSE"
             ],
             "name": "snappy",
@@ -1303,7 +1219,7 @@
       "source": "pkg",
       "summary": {
         "dotnet": 0,
-        "freebsd": 57,
+        "freebsd": 53,
         "go": 0,
         "java": 0,
         "node": 1,
@@ -1311,7 +1227,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 58
+        "total": 54
       }
     }
   }
