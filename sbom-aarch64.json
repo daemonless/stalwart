@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-28T23:47:24Z",
+  "generated": "2026-11-03T00:36:59Z",
   "image": "stalwart",
   "tags": {
     "latest-aarch64": {
-      "app_version": "v1.0.1",
+      "app_version": "v1.0.2",
       "arch": "aarch64",
-      "generated": "2026-10-28T23:45:25Z",
+      "generated": "2026-11-03T00:34:34Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -182,7 +182,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p5"
+            "version": "15.1p6"
           },
           {
             "licenses": [
@@ -409,7 +409,7 @@
     "pkg-aarch64": {
       "app_version": "0.16.25_1",
       "arch": "aarch64",
-      "generated": "2026-10-28T23:45:29Z",
+      "generated": "2026-11-03T00:34:38Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -586,7 +586,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p5"
+            "version": "15.1p6"
           },
           {
             "licenses": [
@@ -821,7 +821,7 @@
     "pkg-latest-aarch64": {
       "app_version": "0.16.25_1",
       "arch": "aarch64",
-      "generated": "2026-10-28T23:45:34Z",
+      "generated": "2026-11-03T00:34:42Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -998,7 +998,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p5"
+            "version": "15.1p6"
           },
           {
             "licenses": [
