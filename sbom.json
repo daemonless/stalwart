@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-11T19:51:20Z",
+  "generated": "2026-11-16T22:56:59Z",
   "image": "stalwart",
   "tags": {
     "latest-amd64": {
-      "app_version": "v1.1.0",
+      "app_version": "v1.1.1",
       "arch": "amd64",
-      "generated": "2026-11-11T19:49:18Z",
+      "generated": "2026-11-16T22:56:02Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -324,7 +324,7 @@
               "APACHE20"
             ],
             "name": "onetbb",
-            "version": "2023.1.0_1"
+            "version": "2023.2.0"
           },
           {
             "licenses": [
