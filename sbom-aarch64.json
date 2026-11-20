@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-03T00:36:59Z",
+  "generated": "2026-11-20T13:11:34Z",
   "image": "stalwart",
   "tags": {
     "latest-aarch64": {
-      "app_version": "v1.0.2",
+      "app_version": "v1.1.1",
       "arch": "aarch64",
-      "generated": "2026-11-03T00:34:34Z",
+      "generated": "2026-11-20T13:08:03Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -245,7 +245,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.131"
+            "version": "3.132"
           },
           {
             "licenses": [
@@ -267,7 +267,7 @@
               "GPLv2+"
             ],
             "name": "hwdata",
-            "version": "0.412,1"
+            "version": "0.413,1"
           },
           {
             "licenses": [
@@ -295,7 +295,7 @@
               "MIT"
             ],
             "name": "level-zero",
-            "version": "1.34.0"
+            "version": "1.35.0"
           },
           {
             "licenses": [
@@ -303,7 +303,7 @@
               "GPLv2"
             ],
             "name": "liblz4",
-            "version": "1.10.0_2,1"
+            "version": "1.11.1,1"
           },
           {
             "licenses": [
@@ -324,7 +324,7 @@
               "APACHE20"
             ],
             "name": "onetbb",
-            "version": "2023.1.0"
+            "version": "2023.2.0"
           },
           {
             "licenses": [
@@ -338,7 +338,7 @@
               "BSD2CLAUSE"
             ],
             "name": "pkg",
-            "version": "2.8.4"
+            "version": "2.9.2"
           },
           {
             "licenses": [
@@ -407,9 +407,9 @@
       }
     },
     "pkg-aarch64": {
-      "app_version": "0.16.25_1",
+      "app_version": "1.0.3",
       "arch": "aarch64",
-      "generated": "2026-11-03T00:34:38Z",
+      "generated": "2026-11-20T13:08:07Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -649,7 +649,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.131"
+            "version": "3.132"
           },
           {
             "licenses": [
@@ -671,7 +671,7 @@
               "GPLv2+"
             ],
             "name": "hwdata",
-            "version": "0.412,1"
+            "version": "0.413,1"
           },
           {
             "licenses": [
@@ -699,7 +699,7 @@
               "MIT"
             ],
             "name": "level-zero",
-            "version": "1.34.0"
+            "version": "1.35.0"
           },
           {
             "licenses": [
@@ -707,7 +707,7 @@
               "GPLv2"
             ],
             "name": "liblz4",
-            "version": "1.10.0_2,1"
+            "version": "1.11.1,1"
           },
           {
             "licenses": [
@@ -728,7 +728,7 @@
               "APACHE20"
             ],
             "name": "onetbb",
-            "version": "2023.1.0"
+            "version": "2023.2.0"
           },
           {
             "licenses": [
@@ -742,7 +742,7 @@
               "BSD2CLAUSE"
             ],
             "name": "pkg",
-            "version": "2.8.4"
+            "version": "2.9.2"
           },
           {
             "licenses": [
@@ -779,7 +779,7 @@
               "SELv2"
             ],
             "name": "stalwart",
-            "version": "0.16.25_1"
+            "version": "1.0.3"
           },
           {
             "licenses": [
@@ -819,9 +819,9 @@
       }
     },
     "pkg-latest-aarch64": {
-      "app_version": "0.16.25_1",
+      "app_version": "1.0.3",
       "arch": "aarch64",
-      "generated": "2026-11-03T00:34:42Z",
+      "generated": "2026-11-20T13:08:11Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1061,7 +1061,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.131"
+            "version": "3.132"
           },
           {
             "licenses": [
@@ -1083,7 +1083,7 @@
               "GPLv2+"
             ],
             "name": "hwdata",
-            "version": "0.412,1"
+            "version": "0.413,1"
           },
           {
             "licenses": [
@@ -1111,7 +1111,7 @@
               "MIT"
             ],
             "name": "level-zero",
-            "version": "1.34.0"
+            "version": "1.35.0"
           },
           {
             "licenses": [
@@ -1119,7 +1119,7 @@
               "GPLv2"
             ],
             "name": "liblz4",
-            "version": "1.10.0_2,1"
+            "version": "1.11.1,1"
           },
           {
             "licenses": [
@@ -1140,7 +1140,7 @@
               "APACHE20"
             ],
             "name": "onetbb",
-            "version": "2023.1.0"
+            "version": "2023.2.0"
           },
           {
             "licenses": [
@@ -1154,7 +1154,7 @@
               "BSD2CLAUSE"
             ],
             "name": "pkg",
-            "version": "2.8.4"
+            "version": "2.9.2"
           },
           {
             "licenses": [
@@ -1191,7 +1191,7 @@
               "SELv2"
             ],
             "name": "stalwart",
-            "version": "0.16.25_1"
+            "version": "1.0.3"
           },
           {
             "licenses": [
