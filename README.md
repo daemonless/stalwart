@@ -194,6 +194,12 @@ Open `http://<server>:25` from another machine (the server's own browser can't u
 
 ### Using PostgreSQL or SQLite instead of RocksDB
 
+These notes are for the `pkg` and `pkg-latest` tags, which seed
+`/config/config.toml`. The `latest` tag runs Stalwart 0.16+, which keeps
+only the datastore in `/config/config.json` and is set up from the web
+admin's bootstrap; see
+[stalw.art/docs/storage](https://stalw.art/docs/storage/) there.
+
 By default `config.toml` stores everything (data, full-text search, blobs,
 and lookups) in RocksDB under `/config/data`. To swap in an external
 PostgreSQL database instead, replace the `[store."rocksdb"]` section and
