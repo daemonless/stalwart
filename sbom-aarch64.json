@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-24T00:52:59Z",
+  "generated": "2026-11-24T01:42:56Z",
   "image": "stalwart",
   "tags": {
     "latest-aarch64": {
       "app_version": "v1.2.0",
       "arch": "aarch64",
-      "generated": "2026-11-24T00:50:04Z",
+      "generated": "2026-11-24T01:39:50Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -409,7 +409,7 @@
     "pkg-aarch64": {
       "app_version": "1.0.3",
       "arch": "aarch64",
-      "generated": "2026-11-24T00:50:08Z",
+      "generated": "2026-11-24T01:39:53Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -821,7 +821,7 @@
     "pkg-latest-aarch64": {
       "app_version": "1.0.3",
       "arch": "aarch64",
-      "generated": "2026-11-24T00:50:12Z",
+      "generated": "2026-11-24T01:39:57Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
