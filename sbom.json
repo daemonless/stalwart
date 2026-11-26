@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-25T13:37:19Z",
+  "generated": "2026-11-26T09:23:00Z",
   "image": "stalwart",
   "tags": {
     "latest-amd64": {
-      "app_version": "v1.2.0",
+      "app_version": "v1.2.1",
       "arch": "amd64",
-      "generated": "2026-11-25T13:36:06Z",
+      "generated": "2026-11-26T09:22:09Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
